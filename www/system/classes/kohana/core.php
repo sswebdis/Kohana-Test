@@ -593,7 +593,7 @@ class Kohana_Core {
 	 * If no extension is given, the default extension (`EXT` set in
 	 * `index.php`) will be used.
 	 *
-	 *     // Returns an absolute path to views/template.php
+	 *     // Returns an absolute path to views/main.php
 	 *     Kohana::find_file('views', 'template');
 	 *
 	 *     // Returns an absolute path to media/css/style.css

@@ -1,0 +1,1 @@
+Статья <?php echo $article; ?>
