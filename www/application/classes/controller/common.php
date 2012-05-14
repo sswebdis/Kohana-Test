@@ -9,6 +9,8 @@ abstract class Controller_Common extends Controller_Template {
 		parent::before();
 		View::set_global('title', 'Мой сайт');
 		View::set_global('description', 'Самый лучший сайт');
+		$this->template->title = 'Мой сайт';
+		$this->template->description = 'Самый лучший сайт';
 		$this->template->content = '';
 		$this->template->styles = array('main');
 		$this->template->scripts = '';

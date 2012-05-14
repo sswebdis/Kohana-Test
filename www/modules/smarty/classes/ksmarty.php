@@ -34,20 +34,20 @@ abstract class Ksmarty {
 			$s = new Smarty ();
 			
 			// Apply configuration data
-			$s->compile_dir = Kohana::config ( 'smarty' )->compile_dir;
-			$s->plugins_dir = Kohana::config ( 'smarty' )->plugins_dir;
-			$s->cache_dir = Kohana::config ( 'smarty' )->cache_dir;
-			$s->config_dir = Kohana::config ( 'smarty' )->config_dir;
+			$s->compile_dir = Kohana::$config->load ( 'smarty' )->compile_dir;
+			$s->plugins_dir = Kohana::$config->load ( 'smarty' )->plugins_dir;
+			$s->cache_dir = Kohana::$config->load ( 'smarty' )->cache_dir;
+			$s->config_dir = Kohana::$config->load ( 'smarty' )->config_dir;
 			
-			$s->debug_tpl = Kohana::config ( 'smarty' )->debug_tpl;
-			$s->debugging_ctrl = Kohana::config ( 'smarty' )->debugging_ctrl;
-			$s->debugging = Kohana::config ( 'smarty' )->debugging;
-			$s->caching = Kohana::config ( 'smarty' )->caching;
-			$s->force_compile = Kohana::config ( 'smarty' )->force_compile;
-			$s->security = Kohana::config ( 'smarty' )->security;
+			$s->debug_tpl = Kohana::$config->load ( 'smarty' )->debug_tpl;
+			$s->debugging_ctrl = Kohana::$config->load ( 'smarty' )->debugging_ctrl;
+			$s->debugging = Kohana::$config->load ( 'smarty' )->debugging;
+			$s->caching = Kohana::$config->load ( 'smarty' )->caching;
+			$s->force_compile = Kohana::$config->load ( 'smarty' )->force_compile;
+			//$s->security = Kohana::$config->load ( 'smarty' )->security;
 			
 			// Register the autoload filters
-			$s->autoload_filters = array ('pre' => Kohana::config ( 'smarty' )->pre_filters, 'post' => Kohana::config ( 'smarty' )->post_filters, 'output' => Kohana::config ( 'smarty' )->output_filters );
+			$s->autoload_filters = array ('pre' => Kohana::$config->load ( 'smarty' )->pre_filters, 'post' => Kohana::$config->load ( 'smarty' )->post_filters, 'output' => Kohana::$config->load ( 'smarty' )->output_filters );
 			
 			// Create the instance singleton
 			Ksmarty::$instance = $s;

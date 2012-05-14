@@ -1,9 +1,9 @@
-<?php foreach($comments as $comment): ?>
+{foreach from=$comments item="comment"}
 
 <strong>Имя пользователя:</strong><br />
-<?php echo $comment['name']; ?><br />
+{$comment.name}<br />
 <strong>Комментарий пользователя:</strong><br />
-<?php echo $comment['comment']; ?>
+	{$comment.comment}
 <br /><hr /><br />
 
-<?php endforeach; ?>
+{/foreach}

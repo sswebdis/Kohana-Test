@@ -3,13 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><?php echo $title; ?></title>
-	<meta name="description" content="<?php echo $description; ?>" />
-	<?php foreach($styles as $style): ?>
-	<link href="<?php echo URL::base(); ?>public/css/<?php echo $style; ?>.css"
+	<title>{$title}</title>
+	<meta name="description" content="{$description}" />
+	{foreach from=$styles item="style"}
+	<link href="{URL::base()}public/css/{$style}.css"
 		  rel="stylesheet" type="text/css" />
-	<?php endforeach; ?>
-
+	{/foreach}
 </head>
 
 <body>
@@ -21,13 +20,13 @@
 			<h3>Меню</h3>
 			<br />
 			<ul>
-				<li><a href="<?php echo URL::site(); ?>">Главная</a></li>
-				<li><a href="<?php echo URL::site('about'); ?>">О сайте</a></li>
-				<li><a href="<?php echo URL::site('articles'); ?>">Статьи</a></li>
-				<li><a href="<?php echo URL::site('contacts'); ?>">Мои контакты</a></li>
+				<li><a href="{URL::site()}">Главная</a></li>
+				<li><a href="{URL::site('about')}">О сайте</a></li>
+				<li><a href="{URL::site('articles')}">Статьи</a></li>
+				<li><a href="{URL::site('contacts')}">Мои контакты</a></li>
 			</ul>
 		</div>
-		<div class="content"><?php echo $content; ?></div>
+		<div class="content">{$content}</div>
 
 		<div class="clearing"></div>
 		<div class="footer">2012 Все права защищены</div>

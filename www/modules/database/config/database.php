@@ -20,10 +20,8 @@ return array
 			 */
 			'hostname'   => 'localhost',
 			'database'   => 'kohana',
-//			'username'   => FALSE,
-//			'password'   => FALSE,
-			'username'   => 'kohana',
-			'password'   => 'kohana',
+			'username'   => FALSE,
+			'password'   => FALSE,
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',

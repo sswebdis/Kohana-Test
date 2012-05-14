@@ -28,7 +28,7 @@ class View extends Kohana_View {
 			return;
 		
 		// Load Ksmarty only if it's activated and the template-extension matches
-		if ((Kohana::config ( 'smarty' )->integration) && (substr ( strrchr ( $template, '.' ), 1 ) == Kohana::config ( 'smarty' )->template_ext)) {
+		if ((Kohana::$config->load ( 'smarty' )->integration) && (substr ( strrchr ( $template, '.' ), 1 ) == Kohana::$config->load( 'smarty' )->template_ext)) {
 			// Get the Smarty instance
 			$smarty = Ksmarty::instance ();
 			
@@ -55,9 +55,9 @@ class View extends Kohana_View {
 	 */
 	public function set_filename($file) {
 		// Get the correct file extension
-		$ext = ((Kohana::config ( 'smarty' )->integration) && ($ext = Kohana::config ( 'smarty' )->template_ext)) ? $ext : NULL;
+		$ext = ((Kohana::$config->load ( 'smarty' )->integration) && ($ext = Kohana::$config->load ( 'smarty' )->template_ext)) ? $ext : NULL;
 		// Search for the template file
-		foreach ( Kohana::config ( 'smarty' )->template_dir as $directory ) {
+		foreach ( Kohana::$config->load ( 'smarty' )->template_dir as $directory ) {
 			if (($path = Kohana::find_file ( $directory, $file, $ext )) === FALSE) {
 				if (($path = Kohana::find_file ( $directory, $file )) === FALSE) {
 					throw new Kohana_View_Exception ( 'The requested view :file could not be found', array (':file' => $file ) );
