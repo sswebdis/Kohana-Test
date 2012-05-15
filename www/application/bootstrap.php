@@ -101,7 +101,8 @@ Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
+	'database'   => MODPATH.'database',   // Database access
+	'captcha'  => MODPATH.'captcha', //Captcha
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
@@ -131,10 +132,10 @@ Route::set('static', '<action>(/<id>)', array('action' => 'about|contacts'))
 	'controller' => 'static',
 ));
 
-Route::set('articles', 'articles(/<id>)', array('id' => '.+'))
+Route::set('articles', '<articles>/<id>-<artname>', array('id' => '[0-9]+'), array('artname' => '.+'))
 	->defaults(array(
 	'controller' => 'articles',
-	'action'     => 'index',
+	'action'     => 'article',
 ));
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')

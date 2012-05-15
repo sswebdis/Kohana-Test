@@ -20,8 +20,8 @@ return array
 			 */
 			'hostname'   => 'localhost',
 			'database'   => 'kohana',
-			'username'   => FALSE,
-			'password'   => FALSE,
+			'username'   => 'kohana',
+			'password'   => 'kohana',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
@@ -42,7 +42,7 @@ return array
 			 */
 			'dsn'        => 'mysql:host=localhost;dbname=kohana',
 			'username'   => 'root',
-			'password'   => 'r00tdb',
+			'password'   => '',
 			'persistent' => FALSE,
 		),
 		/**
